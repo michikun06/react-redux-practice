@@ -1,29 +1,31 @@
 import React from 'react';
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <label htmlFor="bar">bar</label>
-//         <input type="text" onClick={() => { console.log("クリックされた") }} />
-//       </React.Fragment>
-//     )
-//   }
-// }
-
 const App = () => {
+  const profiles = [
+    { name: "Taro", age: 21 },
+    { name: "Hanako", age: 4 },
+    { name: "Yuki", age: 62 },
+    { age: 21 }
+  ]
+
   return (
-    <div>
-      <Cat />
-      <Cat />
-      <Cat />
-      <Cat />
-    </div>
+    < div >
+      {
+        profiles.map((data, index) => {
+          return <User name={data.name} age={data.age} key={index} />
+        })
+      }
+    </div >
   )
 }
 
-const Cat = () => {
-  return <div>Meow!</div>
+const User = props => {
+  return <div>Hi!,I am {props.name} and {props.age} years old!</div>
+}
+
+User.defaultProps = {
+  name: "unknown",
+  age: 100
 }
 
 export default App;
