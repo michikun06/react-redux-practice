@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
-import count from './count';
+import { reducer as form } from "redux-form";
+import events from './events';
 // import src from "*.bmp";
 
 
 // const reducer = combineReducers({
-//     count
+//     events
 // });
 // export default reducer
 // 
@@ -12,4 +13,4 @@ import count from './count';
 
 
 // src / index.jsのstoreに更新したstateを入れる
-export default combineReducers({ count })
+export default combineReducers({ events, form })
