@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { increment, decrement } from '../action';
 
-class App extends Component {
+class EventsIndex extends Component {
   render() {
     const props = this.props
     return (
@@ -16,11 +16,16 @@ class App extends Component {
   }
 }
 
+
 const mapStateToProps = state => ({ value: state.count.value })
+
+
+// ActionCreatorで作成したアクションをdispatch関数にそれぞれ渡す
 const mapDispatchToProps = dispatch => ({
   increment: () => dispatch(increment()),
   decrement: () => dispatch(decrement())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+export default connect(mapStateToProps, mapDispatchToProps)(EventsIndex)
 

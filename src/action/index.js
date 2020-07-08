@@ -1,5 +1,4 @@
 // actionはJavaScriptオブジェクトの1つで内部に「type」とtypeに対応する「値」を持っている
-
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 
